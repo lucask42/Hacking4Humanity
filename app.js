@@ -4,6 +4,7 @@ const express = require('express')
 const app = express()
 debugger
 const search = require("./scripts/meetupAPI")
+// const ejs = require('ejs')
 
 app.set('view engine', 'ejs')
 
@@ -16,13 +17,14 @@ app.get('/authd', function (err, req, res) {
   if (err){
     console.log(err)
   }
-  //let token = req.originalUrl.split("access_token=")[1].split("&")[0]
   console.log(req.path)
+  //let token = req.originalUrl.split("access_token=")[1].split("&")[0]
+
   //let token = window.location.hash.split("access_token=")[1].split("&")[0]
   //var result = search.findGroupByTerms('RUBY')
-
-  // res.render('authd', {result})
-  res.render('authd')
+  var result = "temporary test string"
+  res.render('authd', {result})
+  //res.render('authd')
 })
 
 app.listen(process.env.PORT || 3333, function(){

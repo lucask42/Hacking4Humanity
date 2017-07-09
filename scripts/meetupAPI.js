@@ -15,7 +15,10 @@ console.log(terms)
   terms = Array.isArray(terms) ? terms.join() : terms
   request(`${url}find/groups?page=${numResults}&text=${terms}&access_token=${token}`, (error, response, body) => {
     if (!error && response.statusCode == 200) {
-      let groups = JSON.parse(body)
+      console.log(response.statusCode)
+      console.log(JSON.parse(body))
+
+      // let groups = JSON.parse(body)
       // console.log(data)
       // DO WHATEVER WE WANT WITH THE DATA HERE
       //console.log(`NAME: ${group.name}\nLINK: ${group.link}\n`)
@@ -32,8 +35,8 @@ console.log(terms)
       //   //</ul>
       // )
 
-    } else {
-      console.log(response.statusCode)
-    }
+      // } else {
+      //   console.log(response.statusCode)
+      // }
   })
 }
